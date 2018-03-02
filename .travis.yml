@@ -5,6 +5,8 @@ os: osx
 osx_image: xcode9.2
 language:
   - generic
+python:
+  - "2.7"
 
 env:
   global:
@@ -13,7 +15,11 @@ env:
 before_install:
   - brew update
   - brew tap ros/deps
+  - which python
   - echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
+  - brew install python --universal --framework
+  - which python
+  - which python2
   - sudo -H python2 -m pip install wxPython
   - sudo -H python2 -m pip install -U wstool rosdep rosinstall rosinstall_generator rospkg catkin-pkg sphinx
   - sudo -H rosdep init
