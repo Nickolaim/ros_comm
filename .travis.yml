@@ -6,6 +6,10 @@ osx_image: xcode9.2
 language:
   - generic
 
+env:
+  global:
+    - CATKIN_WS=~/ros_catkin_ws
+
 before_install:
   - brew update
   - brew tap ros/deps
@@ -14,7 +18,9 @@ before_install:
   - rosdep update
 
 install:
-  - echo "install"
+  - mkdir $CATKIN_WS
+  - cd $CATKIN_WS
+
 
 before_script:
   - echo "before_script"
