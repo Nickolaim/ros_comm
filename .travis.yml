@@ -19,7 +19,7 @@ before_install:
   - which python2
   - echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
   - cat ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
-  - brew rm python
+  - brew uninstall --ignore-dependencies python
   - brew install python
   - which python
   - which python2
