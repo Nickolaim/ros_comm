@@ -15,15 +15,15 @@ env:
 before_install:
   - brew update
   - brew tap ros/deps
-  - brew doctor
   - which python
   - which python2
   - echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
   - cat ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
-  - brew uninstall --ignore-dependencies python
-  - brew install python
-  - which python
-  - which python2
+  - brew install libidn2 python@2
+    #  - brew uninstall --ignore-dependencies python
+    #  - brew install python
+    #  - which python
+    #  - which python2
   - sudo -H python2 -m pip install wxPython
   - sudo -H python2 -m pip install -U wstool rosdep rosinstall rosinstall_generator rospkg catkin-pkg sphinx
   - sudo -H rosdep init
