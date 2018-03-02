@@ -9,6 +9,11 @@ language:
 before_install:
   - brew update
   - brew tap ros/deps
+  - mkdir -p ~/Library/Python/2.7/lib/python/site-packages
+  - echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
+  - brew install python
+  - sudo -H python2 -m pip install -U pip
+  - sudo -H python2 -m pip install wxPython
 
 install:
   - echo "install"
