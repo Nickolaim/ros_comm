@@ -17,6 +17,7 @@ before_install:
   - brew tap ros/deps
   - which python
   - which python2
+  - which pip
   - echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
   - cat ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
   - brew install libidn2 python@2
@@ -24,6 +25,7 @@ before_install:
     #  - brew install python
     #  - which python
     #  - which python2
+  - python -m pip install --upgrade pip setuptools wheel
   - sudo -H python2 -m pip install wxPython
   - sudo -H python2 -m pip install -U wstool rosdep rosinstall rosinstall_generator rospkg catkin-pkg sphinx
   - sudo -H rosdep init
