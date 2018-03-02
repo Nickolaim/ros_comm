@@ -10,6 +10,8 @@ before_install:
   - brew update
   - brew tap ros/deps
   - sudo -H python2 -m pip install -U wxPython wstool rosdep rosinstall rosinstall_generator rospkg catkin-pkg sphinx
+  - sudo -H rosdep init
+  - rosdep update
 
 install:
   - echo "install"
