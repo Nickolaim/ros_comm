@@ -14,9 +14,8 @@ before_install:
   - brew update
   - brew tap ros/deps
   - echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
-  - brew reinstall python
-  - sudo -H python2 -m pip --version
-  - sudo -H python2 -m pip install -U wxPython wstool rosdep rosinstall rosinstall_generator rospkg catkin-pkg sphinx
+  - sudo -H python2 -m pip install wxPython
+  - sudo -H python2 -m pip install -U wstool rosdep rosinstall rosinstall_generator rospkg catkin-pkg sphinx
   - sudo -H rosdep init
   - rosdep update
 
