@@ -2,14 +2,13 @@
 # Based on: http://wiki.ros.org/kinetic/Installation/OSX/Homebrew/Source
 
 os: osx
+osx_image: xcode9.2
 language:
   - generic
 
 before_install:
-  - echo "before_install"
-  - hostname
   - brew update
-  - brew install cmake
+  - brew tap ros/deps
 
 install:
   - echo "install"
