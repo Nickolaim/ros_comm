@@ -1,0 +1,22 @@
+# CI for ros_comm on Mac.
+# Based on: http://wiki.ros.org/kinetic/Installation/OSX/Homebrew/Source
+
+os: osx
+language:
+  - generic
+
+before_install:
+  - echo "before_install"
+  - hostname
+  - brew update
+  - brew install cmake
+
+install:
+  - echo "install"
+
+before_script:
+  - echo "before_script"
+
+script:
+  - echo "script"
+
