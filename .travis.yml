@@ -5,8 +5,6 @@ os: osx
 osx_image: xcode9.2
 language:
   - generic
-python:
-  - "2.7"
 
 env:
   global:
@@ -15,9 +13,6 @@ env:
 before_install:
   - brew update
   - brew tap ros/deps
-  - which python
-  - which python2
-  - which pip
   - echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
   - cat ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
   - brew install libidn2 python@2
@@ -25,7 +20,6 @@ before_install:
     #  - brew install python
     #  - which python
     #  - which python2
-  - python -m pip install --upgrade pip setuptools wheel
   - sudo -H python2 -m pip install wxPython
   - sudo -H python2 -m pip install -U wstool rosdep rosinstall rosinstall_generator rospkg catkin-pkg sphinx
   - sudo -H rosdep init
@@ -36,7 +30,7 @@ install:
   - cd $CATKIN_WS
   - rosinstall_generator ros_comm --rosdistro kinetic --deps --wet-only --tar > kinetic-ros_comm-wet.rosinstall
   - wstool init -j8 src kinetic-ros_comm-wet.rosinstall
-  - rosdep install --from-paths src --ignore-src --rosdistro kinetic -y --skip-keys google-mock
+  - rosdep install --from-paths src --ignore-src --rosdistro kinetic -y --skip-keys google-mock --as-root pip\:false
   - ls -la .
 
 before_script:
