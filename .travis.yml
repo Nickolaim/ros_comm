@@ -20,7 +20,10 @@ before_install:
 install:
   - mkdir $CATKIN_WS
   - cd $CATKIN_WS
-
+  - rosinstall_generator ros_comm --rosdistro kinetic --deps --wet-only --tar > kinetic-ros_comm-wet.rosinstall
+  - wstool init -j8 src kinetic-ros_comm-wet.rosinstall
+  - rosdep install --from-paths src --ignore-src --rosdistro kinetic -y --skip-keys google-mock
+  - ls -la .
 
 before_script:
   - echo "before_script"
