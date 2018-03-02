@@ -15,6 +15,7 @@ env:
 before_install:
   - brew update
   - brew tap ros/deps
+  - brew doctor
   - which python
   - which python2
   - echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
