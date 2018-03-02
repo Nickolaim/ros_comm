@@ -16,8 +16,11 @@ before_install:
   - brew update
   - brew tap ros/deps
   - which python
+  - which python2
   - echo "$(brew --prefix)/lib/python2.7/site-packages" >> ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
-  - brew install python --universal --framework
+  - cat ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
+  - brew rm python
+  - brew install python
   - which python
   - which python2
   - sudo -H python2 -m pip install wxPython
